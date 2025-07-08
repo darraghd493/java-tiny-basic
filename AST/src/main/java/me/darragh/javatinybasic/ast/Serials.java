@@ -1,0 +1,13 @@
+package me.darragh.javatinybasic.ast;
+
+public class Serials {
+    // Token
+    public static final long TOKEN_SERIAL_VERSION_UID = 1L;
+
+    // Expression
+    public static final long EXPRESSION_SERIAL_VERSION_UID = 2L;
+    public static final long LINE_EXPRESSION_SERIAL_VERSION_UID = 3L;
+    public static final long MATHEMATICAL_EXPRESSION_SERIAL_VERSION_UID = 4L;
+    public static final long VALUE_EXPRESSION_SERIAL_VERSION_UID = 5L;
+    public static final long CONDITION_EXPRESSION_SERIAL_VERSION_UID = 6L;
+}

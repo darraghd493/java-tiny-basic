@@ -1,0 +1,26 @@
+package me.darragh.javatinybasic.ast.langauge;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
+public enum LStatement {
+    LET("LET"), // {line number} LET {variable} = {expression}
+    PRINT("PRINT"), // {line number} PRINT {expression}
+    INPUT("INPUT"), // {line number} INPUT {variable}
+    IF("IF"), // {line number} IF {condition} THEN {line number}
+    GOTO("GOTO"), // {line number} GOTO {line number}
+    END("END"); // {line number} END
+
+    private final String token;
+
+    public static LStatement fromToken(String token) {
+        for (LStatement statement : values()) {
+            if (statement.token.equalsIgnoreCase(token)) {
+                return statement;
+            }
+        }
+        throw new IllegalArgumentException("Unknown statement token: " + token);
+    }
+}
