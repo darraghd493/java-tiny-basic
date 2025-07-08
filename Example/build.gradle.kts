@@ -10,6 +10,10 @@ java {
 }
 
 // Dependencies:
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     // Project dependencies:
     implementation(project(":AST"))

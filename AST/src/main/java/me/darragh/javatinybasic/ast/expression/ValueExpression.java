@@ -19,24 +19,24 @@ public class ValueExpression extends Expression {
     private static final long serialVersionUID = VALUE_EXPRESSION_SERIAL_VERSION_UID;
 
     private final @Nullable String variableName;
-    private final @Nullable Integer literalValue;
+    private final @Nullable Integer literalNumberValue;
     private final @Nullable MathematicalExpression mathematicalExpression;
 
     public ValueExpression(@NotNull String variableName) {
         this.variableName = variableName;
-        this.literalValue = null;
+        this.literalNumberValue = null;
         this.mathematicalExpression = null;
     }
 
     public ValueExpression(int value) {
         this.variableName = null;
-        this.literalValue = value;
+        this.literalNumberValue = value;
         this.mathematicalExpression = null;
     }
 
     public ValueExpression(@NotNull MathematicalExpression mathematicalExpression) {
         this.variableName = null;
-        this.literalValue = null;
+        this.literalNumberValue = null;
         this.mathematicalExpression = mathematicalExpression;
     }
 }

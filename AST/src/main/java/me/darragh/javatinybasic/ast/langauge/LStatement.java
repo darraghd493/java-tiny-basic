@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum LStatement {
+    REM("REM"), // {line number} REM {comment} - not generated in AST
     LET("LET"), // {line number} LET {variable} = {expression}
     PRINT("PRINT"), // {line number} PRINT {expression}
     INPUT("INPUT"), // {line number} INPUT {variable}

@@ -5,13 +5,16 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import me.darragh.javatinybasic.ast.Token;
 import me.darragh.javatinybasic.ast.TokenFactory;
+import me.darragh.javatinybasic.ast.expression.Expression;
 import me.darragh.javatinybasic.ast.expression.MathematicalExpression;
+import me.darragh.javatinybasic.ast.expression.StringValueExpression;
 import me.darragh.javatinybasic.ast.expression.ValueExpression;
 import me.darragh.javatinybasic.ast.langauge.LArithmeticOperator;
 import me.darragh.javatinybasic.ast.langauge.LRelationalOperator;
 import me.darragh.javatinybasic.ast.langauge.LReservedKeyword;
 import me.darragh.javatinybasic.ast.langauge.LStatement;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +29,6 @@ import java.util.regex.Pattern;
 public class Parser {
     //region Patterns
     private static final Pattern MULTI_SPACE_PATTERN = Pattern.compile("\\s+");
-    private static final Pattern ENTIRE_LINE_COMMENT_PATTERN = Pattern.compile("^\"[^\"\\r\\n]*\"$");
     private static final Pattern POSITIVE_NUMBER_PATTERN = Pattern.compile("^\\d+");
     private static final Pattern VALID_VARIABLE_NAME_PATTERN = Pattern.compile("[A-Z]"); // Classic tiny BASIC variable names are single uppercase letters
     //endregion
@@ -40,12 +42,12 @@ public class Parser {
         List<String> lines = List.of(source.split("\n"));
         for (String line : lines) {
             line = line.trim();
-            if (line.isEmpty() // skip empty lines
-                    || line.matches(ENTIRE_LINE_COMMENT_PATTERN.pattern()) // skip *entire* comment lines
-            ) {
+            if (line.isEmpty()) { // skip empty lines
                 continue;
             }
-            this.tokens.add(parseLine(line));
+            Token token = parseLine(line);
+            if (token == null) continue; // skip REM statements
+            this.tokens.add(token);
         }
     }
 
@@ -62,7 +64,7 @@ public class Parser {
      * @return A Token representing the parsed line.
      * @throws ParserInvalidLineException If the line is invalid or cannot be parsed.
      */
-    public static @NotNull Token parseLine(@NotNull String line) throws ParserInvalidLineException {
+    public static @Nullable Token parseLine(@NotNull String line) throws ParserInvalidLineException {
         String tokens = MULTI_SPACE_PATTERN.matcher(line).replaceAll(" ").trim();
         String[] parts = tokens.split(" ");
         if (parts.length == 0) {
@@ -92,6 +94,7 @@ public class Parser {
         // Identify the statement type
         LStatement statement = LStatement.fromToken(parts[1]);
         return switch (statement) {
+            case REM -> null;
             case LET -> generateLetToken(lineNumber, parts);
             case PRINT -> generatePrintToken(lineNumber, parts);
             case INPUT -> generateInputToken(lineNumber, parts);
@@ -124,7 +127,7 @@ public class Parser {
         );
     }
 
-    private static @NotNull Token generatePrintToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
+    private static @NotNull Token generatePrintToken(int lineNumber, String[] parts) throws ParserInvalidLineException { // TODO: Improve code quality - very poor readability
         if (parts.length < 3) {
             throw ParserInvalidLineException.create(
                     "PRINT statement must be in the form: {line number} PRINT {expression}",
@@ -132,11 +135,23 @@ public class Parser {
                     );
         }
 
+        String exprLine = String.join(" ", Arrays.copyOfRange(parts, 2, parts.length));
+        List<String> exprParts = splitByCommaOutsideQuotes(exprLine);
+
+        List<Expression> expressions = new ArrayList<>();
+        for (String exprPart : exprParts) {
+            String trimmed = exprPart.trim();
+            if (trimmed.startsWith("\"") && trimmed.endsWith("\"") && trimmed.length() >= 2) {
+                expressions.add(new StringValueExpression(trimmed.substring(1, trimmed.length() - 1)));
+            } else {
+                String[] tokens = trimmed.split("\\s+");
+                expressions.add(parseValueExpression(tokens, true));
+            }
+        }
+
         return TokenFactory.createPrintToken(
                 lineNumber,
-                parseValueExpression(
-                        Arrays.copyOfRange(parts, 2, parts.length)
-                )
+                expressions.toArray(new Expression[0])
         );
     }
 
@@ -266,9 +281,9 @@ public class Parser {
             case 0 -> throw ParserInvalidLineException.create("Value expression cannot be empty: ", String.join(" ", parts));
             case 1 -> { // Handle variables/literals
                 String part = parts[0];
-                if (part.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
+                if (part.matches(POSITIVE_NUMBER_PATTERN.pattern())) { // integer literal
                     yield new ValueExpression(Integer.parseInt(part));
-                } else {
+                } else { // variable name
                     if (!isValidVariableName(part)) {
                         throw ParserInvalidLineException.create("Invalid variable name in value expression: ", String.join(" ", parts));
                     }
@@ -314,7 +329,7 @@ public class Parser {
             throw ParserInvalidLineException.create("Mathematical expression must contain at least one value: ", String.join(" ", parts));
         }
 
-        if (expectingOperator) {
+        if (!expectingOperator) { // inverse
             throw ParserInvalidLineException.create("Mathematical expression cannot end with an operator: ", String.join(" ", parts));
         }
 
@@ -326,8 +341,41 @@ public class Parser {
     //endregion
 
     //region Utility Methods
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean isValidVariableName(@NotNull String variableName) {
         return variableName.length() == 1 && VALID_VARIABLE_NAME_PATTERN.matcher(variableName).matches();
+    }
+
+    private static List<String> splitByCommaOutsideQuotes(String input) throws ParserInvalidLineException {
+        List<String> parts = new ArrayList<>();
+        StringBuilder current = new StringBuilder();
+        boolean inQuotes = false;
+
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (c == '"') {
+                if (i > 0 && input.charAt(i - 1) == '\\') {
+                    current.append(c);
+                } else {
+                    inQuotes = !inQuotes;
+                    current.append(c);
+                }
+            } else if (c == ',' && !inQuotes) {
+                parts.add(current.toString());
+                System.out.println("Split token: [" + current.toString() + "]");
+                current.setLength(0);
+            } else {
+                current.append(c);
+            }
+        }
+
+        if (inQuotes) {
+            throw ParserInvalidLineException.create("Unterminated string literal in PRINT statement: ", input);
+        }
+
+        parts.add(current.toString());
+        System.out.println("Split token: [" + current.toString() + "]");
+        return parts;
     }
     //endregion
 }

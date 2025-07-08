@@ -1,11 +1,13 @@
 package me.darragh.javatinybasic.ast;
 
 import lombok.experimental.UtilityClass;
+import me.darragh.javatinybasic.ast.expression.Expression;
 import me.darragh.javatinybasic.ast.expression.LineNumberExpression;
 import me.darragh.javatinybasic.ast.expression.ValueExpression;
 import me.darragh.javatinybasic.ast.expression.VariableNameNumberExpression;
 import me.darragh.javatinybasic.ast.expression.statement.IFExpression;
 import me.darragh.javatinybasic.ast.expression.statement.LETExpression;
+import me.darragh.javatinybasic.ast.expression.statement.PRINTExpression;
 import me.darragh.javatinybasic.ast.langauge.LRelationalOperator;
 import me.darragh.javatinybasic.ast.langauge.LStatement;
 import org.jetbrains.annotations.NotNull;
@@ -26,11 +28,13 @@ public class TokenFactory {
         );
     }
 
-    public static Token createPrintToken(int lineNumber, @NotNull ValueExpression valueExpression) {
+    public static Token createPrintToken(int lineNumber, @NotNull Expression... expressions) {
         return new Token(
                 lineNumber,
                 LStatement.PRINT,
-                valueExpression
+                new PRINTExpression(
+                        expressions
+                )
         );
     }
 

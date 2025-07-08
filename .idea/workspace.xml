@@ -4,47 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameNumberExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/LETExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="fix: parser (functional demo), restructure">
+      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/settings.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JvmTranspiler/settings.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Example/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/.gitinclude" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/main/java/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/.gitinclude" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/me/darragh/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/.gitinclude" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +32,14 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -65,6 +49,16 @@
     &quot;assignee&quot;: &quot;darraghd493&quot;
   }
 }</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="fix: parser (functional demo), restructure" />
+        <option name="rewordedMessage" value="fix: parser (functional demo), restructure" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="2ff748c049dd4b1984326f2e5255a2f8d97540e6" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/darraghd493/java-tiny-basic&quot;,
@@ -85,6 +79,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor": "Debug",
     "Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -96,7 +91,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Example/src/main/java/me/darragh/Main.java",
+    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Interpreter/src/main/java/me/darragh/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -115,6 +110,8 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.darragh.javatinybasic.ast.expression.statement" />
+      <recent name="me.darragh.javatinybasic.interpreter" />
       <recent name="" />
     </key>
   </component>
@@ -157,12 +154,44 @@
       <option name="presentableId" value="Default" />
       <updated>1751994775384</updated>
       <workItem from="1751994778917" duration="256000" />
-      <workItem from="1752012860722" duration="1813000" />
+      <workItem from="1752012860722" duration="4084000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
+      <option name="closed" value="true" />
+      <created>1752015290956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752015290956</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: parser (functional demo), restructure">
+      <option name="closed" value="true" />
+      <created>1752015298473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752015298473</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: parser (functional demo), restructure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: parser (functional demo), restructure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
