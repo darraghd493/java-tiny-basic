@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.Serial;
 
-import static me.darragh.javatinybasic.ast.Serials.CONDITION_EXPRESSION_SERIAL_VERSION_UID;
+import static me.darragh.javatinybasic.ast.Serials.IF_STATEMENT_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
  * Represents an IF expression, which consists of two value expressions and a relational operator to compare them.
@@ -20,9 +20,10 @@ import static me.darragh.javatinybasic.ast.Serials.CONDITION_EXPRESSION_SERIAL_V
 @RequiredArgsConstructor
 public class IFExpression extends Expression {
     @Serial
-    private static final long serialVersionUID = CONDITION_EXPRESSION_SERIAL_VERSION_UID;
+    private static final long serialVersionUID = IF_STATEMENT_EXPRESSION_SERIAL_VERSION_UID;
 
     private final @NotNull ValueExpression valueA;
     private final @NotNull ValueExpression valueB;
     private final @NotNull LRelationalOperator relationalOperator;
+    private final int lineNumberToGoto;
 }

@@ -12,7 +12,7 @@ import static me.darragh.javatinybasic.ast.Serials.LINE_EXPRESSION_SERIAL_VERSIO
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class LineNumberExpression extends Expression {
+public class LineNumberExpression extends Expression { // Used for explicit definition
     @Serial
     private static final long serialVersionUID = LINE_EXPRESSION_SERIAL_VERSION_UID;
 

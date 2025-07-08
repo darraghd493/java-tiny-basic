@@ -2,7 +2,7 @@ package me.darragh.javatinybasic.parser;
 
 public class ParserInvalidLineException extends Exception {
     private ParserInvalidLineException(String message, String line) {
-        super(message + " Line: " + line);
+        super(message + " " + line);
     }
 
     public static ParserInvalidLineException create(String message, String line) {

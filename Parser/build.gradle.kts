@@ -22,6 +22,10 @@ val annotationImplementation: Configuration by configurations.creating {
 }
 
 dependencies {
+    // Project dependencies:
+    implementation(project(":AST"))
+
+    // Annotations:
     annotationImplementation("org.projectlombok:lombok:1.18.36")
     implementation("org.jetbrains:annotations:26.0.2")
 }
