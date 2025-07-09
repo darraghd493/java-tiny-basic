@@ -71,5 +71,8 @@ public class ParserDemo {
 {line number}   NEXT {variable}
 {line number}   GOTO {line number}
 {line number}   GOSUB {line number}
+{line number}   RETURN (exits out of the GOSUB)
 {line number}   END
 ```
+
+This attempts to be faithful to the [original Tiny BASIC syntax](http://tinybasic.cyningstan.org.uk/page/12/tiny-basic-manual), but may not support all features or edge cases. The parser is designed to be simple and easy to understand, so it may not handle all possible syntax errors gracefully.

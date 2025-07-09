@@ -22,7 +22,7 @@ public class FORExpression extends Expression {
     private static final long serialVersionUID = FOR_STATEMENT_EXPRESSION_SERIAL_VERSION_UID;
 
     private final @NotNull String variableName;
-    private final @NotNull ValueExpression valueFrom;
-    private final @NotNull ValueExpression valueTo;
-    private final @NotNull ValueExpression valueStep;
+    private final @NotNull ValueExpression startValue;
+    private final @NotNull ValueExpression endValue;
+    private final @NotNull ValueExpression stepValue;
 }

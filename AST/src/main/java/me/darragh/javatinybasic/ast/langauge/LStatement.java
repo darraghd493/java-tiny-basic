@@ -15,6 +15,7 @@ public enum LStatement {
     NEXT("NEXT"), // {line number} NEXT {variable} (loop control)
     GOTO("GOTO"), // {line number} GOTO {line number}
     GOSUB("GOSUB"), // {line number} GOSUB {line number}
+    RETURN("RETURN"), // {line number} RETURN (GOSUB only)
     END("END"); // {line number} END
 
     private final String token;

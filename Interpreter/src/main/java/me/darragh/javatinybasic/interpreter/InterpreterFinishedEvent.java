@@ -1,6 +1,6 @@
 package me.darragh.javatinybasic.interpreter;
 
 @FunctionalInterface
-public interface InterpreterInputEvent {
-    int getInput();
+public interface InterpreterFinishedEvent {
+    void onFinished();
 }

@@ -101,6 +101,13 @@ public class TokenFactory {
         );
     }
 
+    public static @NotNull Token createReturnToken(int lineNumber) {
+        return new Token(
+                lineNumber,
+                LStatement.RETURN,
+                null
+        );
+    }
     public static @NotNull Token createEndToken(int lineNumber) {
         return new Token(
                 lineNumber,

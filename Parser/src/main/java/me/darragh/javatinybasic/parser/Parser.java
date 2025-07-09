@@ -103,6 +103,7 @@ public class Parser {
             case NEXT -> generateNextToken(lineNumber, parts);
             case GOTO -> generateGotoToken(lineNumber, parts);
             case GOSUB -> generateGosubToken(lineNumber, parts);
+            case RETURN -> generateReturnToken(lineNumber);
             case END -> generateEndToken(lineNumber);
         };
     }
@@ -321,6 +322,10 @@ public class Parser {
                 lineNumber,
                 parseTokenGotoLineNumber(parts, lineNumberToGotoStr)
         );
+    }
+
+    private static @NotNull Token generateReturnToken(int lineNumber) {
+        return TokenFactory.createReturnToken(lineNumber);
     }
 
     private static @NotNull Token generateEndToken(int lineNumber) {
