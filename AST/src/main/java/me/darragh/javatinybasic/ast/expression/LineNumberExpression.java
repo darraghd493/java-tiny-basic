@@ -8,7 +8,7 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.LINE_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents a line number as Tiny BASIC does not support variable names/arithmetic in line numbers expressions (GOTO {expression}).
+ * Explicitly represents a line number expression.
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

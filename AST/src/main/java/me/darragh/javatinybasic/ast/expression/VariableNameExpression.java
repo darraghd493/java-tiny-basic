@@ -9,11 +9,11 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.VARIABLE_NAME_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents a line number as Tiny BASIC does not support variable names/arithmetic in line numbers expressions (GOTO {expression}).
+ * Explicitly represents a variable name expression.
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class VariableNameNumberExpression extends Expression { // Used for explicit definition
+public class VariableNameExpression extends Expression { // Used for explicit definition
     @Serial
     private static final long serialVersionUID = VARIABLE_NAME_EXPRESSION_SERIAL_VERSION_UID;
 

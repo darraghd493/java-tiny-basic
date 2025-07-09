@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="fix: parser (functional demo), restructure">
-      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Parser): REM comments (misinformed), PRINT strings">
+      <change afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameNumberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Example/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1751994775384</updated>
       <workItem from="1751994778917" duration="256000" />
-      <workItem from="1752012860722" duration="4084000" />
+      <workItem from="1752012860722" duration="5971000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -172,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752015298473</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(Parser): REM comments (misinformed), PRINT strings">
+      <option name="closed" value="true" />
+      <created>1752017502694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752017502694</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,8 +194,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: parser (functional demo), restructure" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: parser (functional demo), restructure" />
+    <MESSAGE value="feat(Parser): make functional &amp; restructure project" />
+    <MESSAGE value="feat(Parser): make functional &amp; restructure project" />
+    <MESSAGE value="feat(Parser): REM comments (misinformed), PRINT strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Parser): REM comments (misinformed), PRINT strings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

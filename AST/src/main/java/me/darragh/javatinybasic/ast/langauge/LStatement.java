@@ -11,6 +11,8 @@ public enum LStatement {
     PRINT("PRINT"), // {line number} PRINT {expression}
     INPUT("INPUT"), // {line number} INPUT {variable}
     IF("IF"), // {line number} IF {condition} THEN {line number}
+    FOR("FOR"), // {line number} FOR {variable} = {start} TO {end} STEP {step}
+    NEXT("NEXT"), // {line number} NEXT {variable} (loop control)
     GOTO("GOTO"), // {line number} GOTO {line number}
     END("END"); // {line number} END
 

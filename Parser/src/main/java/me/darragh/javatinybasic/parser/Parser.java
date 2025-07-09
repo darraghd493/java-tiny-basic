@@ -99,6 +99,8 @@ public class Parser {
             case PRINT -> generatePrintToken(lineNumber, parts);
             case INPUT -> generateInputToken(lineNumber, parts);
             case IF -> generateIfToken(lineNumber, parts);
+            case FOR -> generateForToken(lineNumber, parts);
+            case NEXT -> generateNextToken(lineNumber, parts);
             case GOTO -> generateGotoToken(lineNumber, parts);
             case END -> generateEndToken(lineNumber);
         };
@@ -235,6 +237,61 @@ public class Parser {
         );
     }
 
+    private static @NotNull Token generateForToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
+        if (parts.length < 7 || !parts[5].equals(LReservedKeyword.TO.getToken())) {
+            throw ParserInvalidLineException.create(
+                    "FOR statement must be in the form: {line number} FOR {variable} = {start} TO {end} [STEP {step}]",
+                    String.join(" ", parts)
+            );
+        }
+
+        String variableName = parts[2];
+        if (variableName.isEmpty() || !isValidVariableName(variableName)) {
+            throw ParserInvalidLineException.create("Invalid variable name in FOR statement: ", String.join(" ", parts));
+        }
+
+        ValueExpression startValue = parseValueExpression(
+                Arrays.copyOfRange(parts, 4, 5), false
+        );
+        ValueExpression endValue = parseValueExpression(
+                Arrays.copyOfRange(parts, 6, 7), false
+        );
+
+        ValueExpression stepValue = new ValueExpression(1); // Default step value
+
+        if (parts.length >= 9 && parts[7].equals(LReservedKeyword.STEP.getToken())) {
+            stepValue = parseValueExpression(
+                    Arrays.copyOfRange(parts, 8, 9), false
+            );
+        }
+
+        return TokenFactory.createForToken(
+                lineNumber,
+                variableName,
+                startValue,
+                endValue,
+                stepValue
+        );
+    }
+
+    private static @NotNull Token generateNextToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
+        if (parts.length != 3) {
+            throw ParserInvalidLineException.create(
+                    "GOTO statement must be in the form: {line number} GOTO {line number}",
+                    String.join(" ", parts)
+            );
+        }
+
+        String variableName = parts[2];
+        if (variableName.isEmpty() || !isValidVariableName(variableName)) {
+            throw ParserInvalidLineException.create("Invalid variable name in NEXT statement: ", String.join(" ", parts));
+        }
+        return TokenFactory.createNextToken(
+                lineNumber,
+                variableName
+        );
+    }
+
     private static @NotNull Token generateGotoToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
         if (parts.length != 3) {
             throw ParserInvalidLineException.create(
@@ -362,7 +419,6 @@ public class Parser {
                 }
             } else if (c == ',' && !inQuotes) {
                 parts.add(current.toString());
-                System.out.println("Split token: [" + current.toString() + "]");
                 current.setLength(0);
             } else {
                 current.append(c);
@@ -374,7 +430,6 @@ public class Parser {
         }
 
         parts.add(current.toString());
-        System.out.println("Split token: [" + current.toString() + "]");
         return parts;
     }
     //endregion

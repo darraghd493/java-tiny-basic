@@ -10,7 +10,7 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.STRING_VALUE_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents a string expression. This is only used for print.
+ * Explicitly represents a string expression.
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

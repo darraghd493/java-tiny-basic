@@ -4,7 +4,8 @@ import lombok.experimental.UtilityClass;
 import me.darragh.javatinybasic.ast.expression.Expression;
 import me.darragh.javatinybasic.ast.expression.LineNumberExpression;
 import me.darragh.javatinybasic.ast.expression.ValueExpression;
-import me.darragh.javatinybasic.ast.expression.VariableNameNumberExpression;
+import me.darragh.javatinybasic.ast.expression.VariableNameExpression;
+import me.darragh.javatinybasic.ast.expression.statement.FORExpression;
 import me.darragh.javatinybasic.ast.expression.statement.IFExpression;
 import me.darragh.javatinybasic.ast.expression.statement.LETExpression;
 import me.darragh.javatinybasic.ast.expression.statement.PRINTExpression;
@@ -42,7 +43,7 @@ public class TokenFactory {
         return new Token(
                 lineNumber,
                 LStatement.INPUT,
-                new VariableNameNumberExpression(
+                new VariableNameExpression(
                         variableName
                 )
         );
@@ -57,6 +58,29 @@ public class TokenFactory {
                         valueB,
                         relationalOperator,
                         lineNumberToGoto
+                )
+        );
+    }
+
+    public static @NotNull Token createForToken(int lineNumber, String variableName, ValueExpression startValue, ValueExpression endValue, ValueExpression stepValue) {
+        return new Token(
+                lineNumber,
+                LStatement.FOR,
+                new FORExpression(
+                        variableName,
+                        startValue,
+                        endValue,
+                        stepValue
+                )
+        );
+    }
+
+    public static @NotNull Token createNextToken(int lineNumber, String variableName) {
+        return new Token(
+                lineNumber,
+                LStatement.NEXT,
+                new VariableNameExpression(
+                        variableName
                 )
         );
     }

@@ -6,7 +6,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum LReservedKeyword {
-    THEN("THEN"); // only reserved in IF statement
+    THEN("THEN"), // for IF statement
+    TO("TO"), // for FOR statement
+    STEP("STEP"); // for FOR statement
 
     private final String token;
 

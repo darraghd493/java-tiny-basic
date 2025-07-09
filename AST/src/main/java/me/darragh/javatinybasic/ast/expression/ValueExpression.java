@@ -10,7 +10,7 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.VALUE_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents a value expression which can either be a variable name, a mathematical expression, or a literal value.
+ * Represents a dynamic value expression in the AST. It could be either a variable, literal number, or a mathematical expression.
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
