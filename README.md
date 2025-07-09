@@ -12,12 +12,14 @@ A Tiny BASIC parser, interpreter and transpiler (to Java bytecode) written in Ja
   - very rudimentary and not fully functional
   - if statements are prone to breaking due to the contrast in handling of control flow in Java vs Tiny BASIC
 - **TODO** Unit tests for parser and interpreter
+- **TODO** JavaDoc documentation for all public classes and methods
 
 # Usage
 
 ## Parser
 
 **Note:** The parser is not yet complete and does not support all Tiny BASIC syntax.
+**Note:** The parser does not lexically analyse the input, being a major limitation.
 
 ```java
 import me.darragh.javatinybasic.ast.Token;

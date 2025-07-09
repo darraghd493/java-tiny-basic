@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="chore: README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <recent name="me.darragh.javatinybasic.ast.expression.statement" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Transpiler Demo">
+  <component name="RunManager" selected="Application.Interpreter Demo">
     <configuration name="Interpreter Demo" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="InterpreterDemo" />
       <module name="java-tiny-basic.Example.test" />
@@ -189,7 +187,7 @@
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
-      <workItem from="1752086597359" duration="9417000" />
+      <workItem from="1752086597359" duration="9923000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -279,7 +277,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752096620267</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="refactor: annotations">
+      <option name="closed" value="true" />
+      <created>1752096764633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752096764633</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: README.md">
+      <option name="closed" value="true" />
+      <created>1752096946934</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752096946934</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +321,7 @@
     <MESSAGE value="feat(Transpiler): unfinished prototype" />
     <MESSAGE value="feat(Transpiler): partially functional" />
     <MESSAGE value="feat(Transpiler): functional" />
+    <MESSAGE value="refactor: annotations" />
     <MESSAGE value="chore: README.md" />
     <option name="LAST_COMMIT_MESSAGE" value="chore: README.md" />
   </component>
