@@ -15,7 +15,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Interprets tokenised Tiny BASIC code.
+ * Interpreter for the Java Tiny BASIC language.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @Data
 public class Interpreter {

@@ -13,6 +13,9 @@ import static me.darragh.javatinybasic.ast.Serials.FOR_STATEMENT_EXPRESSION_SERI
 
 /**
  * Represents a FOR expression, which consists of the loop variable name, two boundary value expressions, and a step value expression.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

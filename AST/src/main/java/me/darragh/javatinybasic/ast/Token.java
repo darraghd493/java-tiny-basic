@@ -11,7 +11,12 @@ import java.io.Serializable;
 import static me.darragh.javatinybasic.ast.Serials.TOKEN_SERIAL_VERSION_UID;
 
 /**
- * Embodies a complete statement.
+ * Embodies a single line of code in the Java Tiny Basic language.
+ * This is effectively the 'head' of the AST (Abstract Syntax Tree) for a single line.
+ * <b>Note:</b> ASTs are not strictly defined.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 public record Token(
         int lineNumber, // required, represents the line number of the statement

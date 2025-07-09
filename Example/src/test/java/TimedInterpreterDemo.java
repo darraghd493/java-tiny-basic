@@ -6,6 +6,13 @@ import me.darragh.javatinybasic.parser.ParserInvalidLineException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * An example demonstrating how to use the Java Tiny Basic interpreter to run a block of code with time measurements.
+ * <b>Note:</b> Does not have I/O.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 public class TimedInterpreterDemo {
     public static void main(String[] args) throws ParserInvalidLineException {
         long parserStart =  System.currentTimeMillis();

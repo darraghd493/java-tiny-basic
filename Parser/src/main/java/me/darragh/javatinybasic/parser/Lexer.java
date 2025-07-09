@@ -8,7 +8,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Handles the tokenisation of the source.
+ * Lexically analyses a line of code in the Java Tiny Basic language, producing a list of tokens.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @UtilityClass
 public class Lexer {

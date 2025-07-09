@@ -5,7 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Parser): lexer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/MathematicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/MathematicalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/LETExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/LETExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LArithmeticOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LArithmeticOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LRelationalOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LRelationalOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/InterpreterDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/InterpreterDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TimedInterpreterDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TimedInterpreterDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterFinishedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterFinishedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +215,7 @@
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
-      <workItem from="1752086597359" duration="10798000" />
+      <workItem from="1752086597359" duration="11826000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -324,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752098087325</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat(Parser): lexer">
+      <option name="closed" value="true" />
+      <created>1752098130419</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752098130419</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

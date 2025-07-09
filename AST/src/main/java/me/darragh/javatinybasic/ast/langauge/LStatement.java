@@ -3,6 +3,12 @@ package me.darragh.javatinybasic.ast.langauge;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * An enumeration representing the different types of statements in the Tiny BASIC language.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 @Getter
 @RequiredArgsConstructor
 public enum LStatement {
@@ -20,6 +26,13 @@ public enum LStatement {
 
     private final String token;
 
+    /**
+     * Converts a string token to the corresponding {@link LStatement}.
+     *
+     * @param token The string representation of the statement.
+     * @return The corresponding LStatement enum value.
+     * @throws IllegalArgumentException if the token does not match any statement.
+     */
     public static LStatement fromToken(String token) {
         for (LStatement statement : values()) {
             if (statement.token.equalsIgnoreCase(token)) {

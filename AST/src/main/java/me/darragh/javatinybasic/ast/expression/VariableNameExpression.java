@@ -10,6 +10,9 @@ import static me.darragh.javatinybasic.ast.Serials.VARIABLE_NAME_EXPRESSION_SERI
 
 /**
  * Explicitly represents a variable name expression.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -6,6 +6,12 @@ import me.darragh.javatinybasic.parser.ParserInvalidLineException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * An example demonstrating how to use the Java Tiny Basic interpreter to run a block of code.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 public class InterpreterDemo {
     public static void main(String[] args) throws ParserInvalidLineException {
         Scanner scanner = new Scanner(System.in);

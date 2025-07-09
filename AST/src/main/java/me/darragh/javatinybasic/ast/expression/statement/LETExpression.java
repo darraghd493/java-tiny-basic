@@ -12,7 +12,10 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.LET_STATEMENT_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents an LET expression, which consists of a variable name and the value.
+ * Represents a LET expression, which consists of a variable name and the value.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -11,6 +11,9 @@ import static me.darragh.javatinybasic.ast.Serials.STRING_VALUE_EXPRESSION_SERIA
 
 /**
  * Explicitly represents a string expression.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -13,7 +13,10 @@ import java.io.Serial;
 import static me.darragh.javatinybasic.ast.Serials.IF_STATEMENT_EXPRESSION_SERIAL_VERSION_UID;
 
 /**
- * Represents an IF expression, which consists of two value expressions and a relational operator to compare them.
+ * Represents an IF expression, which consists of two value expressions, a relational operator to compare them and a line number to jump to if the condition is true.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

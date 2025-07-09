@@ -1,5 +1,11 @@
 package me.darragh.javatinybasic.ast;
 
+/**
+ * A class that holds the serial version UIDs for various classes in the AST package.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 public class Serials {
     // Token
     public static final long TOKEN_SERIAL_VERSION_UID = 1L;

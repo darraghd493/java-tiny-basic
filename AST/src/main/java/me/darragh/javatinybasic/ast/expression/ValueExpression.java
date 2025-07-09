@@ -11,6 +11,9 @@ import static me.darragh.javatinybasic.ast.Serials.VALUE_EXPRESSION_SERIAL_VERSI
 
 /**
  * Represents a dynamic value expression in the AST. It could be either a variable, literal number, or a mathematical expression.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -28,10 +28,16 @@ import static org.objectweb.asm.Opcodes.*;
 
 /**
  * Transpiles the Tiny BASIC AST into a Java .JAR file, composed of Java Bytecode.
- * <p>
- * All variables stored will be of {@link Integer} type - null until defined
- * GOTO uses goto - an internal JVM bytecode for bytecode
- * GOSUB acts as a subroutine, and therefore would be embedded as methods: {generated name from line number}#V();
+ * <br/>
+ * <h2>Useful notes:</h2>
+ * <ul>
+ *  <li>All variables stored will be of {@link Integer} type.</li>
+ *  <li>GOTO uses goto, an internal JVM bytecode for bytecode.</li>
+ *  <li>GOSUB acts as a subroutine, and therefore would be embedded as methods: {generated name from line number}#()V.</li>
+ * </ul>
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 // TODO: Improve code quality and generation
 @Data
@@ -72,6 +78,9 @@ public class Transpiler {
     }
     //endregion
 
+    /**
+     * Generates the Java Bytecode for the Tiny BASIC program.
+     */
     public void generate() {
         if (this.generated) {
             return;
@@ -138,6 +147,11 @@ public class Transpiler {
                 placement.jumpInsnNode.label = placement.targetLabel != null ? placement.targetLabel : this.labelNodes.get(placement.lineNumber));
     }
 
+    /**
+     * Exports the generated Java Bytecode to a JAR file at the specified path.
+     *
+     * @param path The path where the JAR file will be created.
+     */
     public void toFile(@NotNull Path path) {
         if (!this.generated) {
             this.generate();

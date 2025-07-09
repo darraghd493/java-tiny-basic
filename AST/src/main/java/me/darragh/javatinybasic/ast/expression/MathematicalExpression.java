@@ -11,6 +11,9 @@ import static me.darragh.javatinybasic.ast.Serials.MATHEMATICAL_EXPRESSION_SERIA
 /**
  * Represents a mathematical expression, composed of a chain of: literal -> operator -> literal, ...
  * Must always end with a literal.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -6,6 +6,12 @@ import me.darragh.javatinybasic.transpiler.Transpiler;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * An example demonstrating how to use the Java Tiny Basic transpiler to transpile a block of code into a JAR file.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 public class TranspilerDemo {
     public static void main(String[] args) throws ParserInvalidLineException {
         List<Token> tokens = Parser.parse("""

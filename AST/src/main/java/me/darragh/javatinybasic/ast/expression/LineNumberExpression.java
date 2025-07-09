@@ -9,6 +9,9 @@ import static me.darragh.javatinybasic.ast.Serials.LINE_EXPRESSION_SERIAL_VERSIO
 
 /**
  * Explicitly represents a line number expression.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

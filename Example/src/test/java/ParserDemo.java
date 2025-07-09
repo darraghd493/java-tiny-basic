@@ -4,6 +4,12 @@ import me.darragh.javatinybasic.parser.ParserInvalidLineException;
 
 import java.util.List;
 
+/**
+ * An example demonstrating how to use the Java Tiny Basic parser to parse a block of code.
+ *
+ * @author darraghd493
+ * @since 1.0.0
+ */
 public class ParserDemo {
     public static void main(String[] args) throws ParserInvalidLineException {
         List<Token> tokens = Parser.parse("""

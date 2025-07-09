@@ -21,10 +21,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Parses the source of a Tiny BASIC program into a list of tokens.
+ * Parses the source of a Tiny BASIC program into a list of tokens, identifying statement types, data types, etc.
+ *
+ * @author darraghd493
+ * @since 1.0.0
  */
-// TODO: Improve code quality
-// TODO: Improve code compatability, i.e., no requirement to have spaces between tokens with a common delimiter in-between (e.g., LET A=5)
 @Data
 @RequiredArgsConstructor
 public class Parser {
@@ -39,6 +40,9 @@ public class Parser {
     private final @NotNull String source;
     private final @NotNull List<Token> tokens = new ArrayList<>();
 
+    /**
+     * Parses the source code into tokens, processing each line and identifying the type of statement.
+     */
     public void parse() throws ParserInvalidLineException {
         List<String> lines = List.of(source.split("\n"));
         for (String line : lines) {
@@ -52,6 +56,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses the entire source code into a list of tokens.
+     *
+     * @param source The source code to parse.
+     * @return A list of tokens representing the parsed source code.
+     * @throws ParserInvalidLineException If any line in the source code is invalid or cannot be parsed.
+     */
     public static @NotNull List<Token> parse(@NotNull String source) throws ParserInvalidLineException {
         Parser parser = new Parser(source);
         parser.parse();
@@ -357,7 +368,7 @@ public class Parser {
         if (size == 0) {
             throw ParserInvalidLineException.create("Value expression cannot be empty: ", String.join(" ", parts));
         } else if (size == 1) {
-            String part = parts.get(0);
+            String part = parts.getFirst();
             if (part.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
                 return new ValueExpression(Integer.parseInt(part));
             } else {
@@ -374,7 +385,7 @@ public class Parser {
         }
     }
 
-    public static MathematicalExpression parseMathematicalExpression(@NotNull List<String> parts) throws ParserInvalidLineException {
+    private static MathematicalExpression parseMathematicalExpression(@NotNull List<String> parts) throws ParserInvalidLineException {
         if (parts.size() < 3) {
             throw ParserInvalidLineException.create("Mathematical expression must have at least 3 parts: ", String.join(" ", parts));
         }
