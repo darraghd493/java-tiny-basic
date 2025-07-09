@@ -12,14 +12,8 @@ public class ParserDemo {
             30 LET B = 10
             40 PRINT "A + B =", A + B
             50 INPUT C
-            60 IF C > 0 THEN 80
-            70 GOTO 100
-            80 FOR I = 1 TO C STEP 2
-            90 PRINT I
-            100 NEXT I
-            110 GOSUB 20
-            120 GOSUB 30
-            130 END
+            60 PRINT C
+            70 END
             """);
         for (Token token : tokens) {
             System.out.printf("%s\t%s\t%s%n", token.lineNumber(), token.statement(), token.expression());

@@ -31,14 +31,8 @@ public class ParserDemo {
             30 LET B = 10
             40 PRINT "A + B =", A + B
             50 INPUT C
-            60 IF C > 0 THEN 80
-            70 GOTO 100
-            80 FOR I = 1 TO C STEP 2
-            90 PRINT I
-            100 NEXT I
-            110 GOSUB 20
-            120 GOSUB 30
-            130 END
+            60 PRINT C
+            70 END
             """);
         for (Token token : tokens) {
             System.out.printf("%s\t%s\t%s%n", token.lineNumber(), token.statement(), token.expression());
@@ -49,11 +43,50 @@ public class ParserDemo {
 
 [View Example](Example/src/test/java/ParserDemo.java)
 
-**TODO**
-
 ## Interpreter
 
-**TODO**
+```java
+import me.darragh.javatinybasic.ast.Token;
+import me.darragh.javatinybasic.interpreter.Interpreter;
+import me.darragh.javatinybasic.parser.Parser;
+import me.darragh.javatinybasic.parser.ParserInvalidLineException;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class InterpreterDemo {
+    public static void main(String[] args) throws ParserInvalidLineException {
+        Scanner scanner = new Scanner(System.in);
+        List<Token> tokens = Parser.parse("""
+                10 LET A = 5
+                20 LET B = 10
+                30 PRINT "Initial A and B:", A, B
+                40 INPUT C
+                50 IF C > B THEN 80
+                60 PRINT "C is less or equal to B"
+                70 GOTO 90
+                80 PRINT "C is greater than B"
+                90 FOR I = 1 TO 3 STEP 1
+                100 PRINT "Loop iteration:", I
+                110 NEXT I
+                120 GOSUB 150
+                130 PRINT "Back from subroutine"
+                140 END
+                150 PRINT "In subroutine"
+                160 RETURN
+            """);
+        Interpreter interpreter = new Interpreter(tokens,
+                /* input */ scanner::nextInt,
+                /* output */ System.out::println,
+                /* finished */ () -> System.out.println("Finished!")
+        );
+        interpreter.run();
+        scanner.close();
+    }
+}
+```
+
+[View Example](Example/src/test/java/InterpreterDemo.java)
 
 ## Transpiler
 

@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="chore: README.md">
-      <change afterPath="$PROJECT_DIR$/Example/src/test/java/InterpreterDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example/src/test/java/TimedInterpreterDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterFinishedEvent.java" afterDir="false" />
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Interpreter): functional, RETURN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Example/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +85,7 @@
   "keyToString": {
     "Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor": "Debug",
     "Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor": "Debug",
-    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Debug",
+    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Run",
     "Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -186,7 +176,7 @@
       <workItem from="1751994778917" duration="256000" />
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
-      <workItem from="1752059213091" duration="3851000" />
+      <workItem from="1752059213091" duration="4006000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -236,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752019910137</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(Interpreter): functional, RETURN">
+      <option name="closed" value="true" />
+      <created>1752066800601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752066800601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +258,8 @@
     <MESSAGE value="feat(Parser): FOR loops, improved parsing" />
     <MESSAGE value="feat(Parser): GOSUB" />
     <MESSAGE value="chore: README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: README.md" />
+    <MESSAGE value="feat(Interpreter): functional, RETURN" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Interpreter): functional, RETURN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
