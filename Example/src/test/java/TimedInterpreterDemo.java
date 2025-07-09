@@ -12,7 +12,6 @@ public class TimedInterpreterDemo {
         List<Token> tokens = Parser.parse("""
                 10 LET A = 5
                 20 LET B = 10
-                30 PRINT "Initial A and B:", A, B
                 40 INPUT C
                 50 IF C > B THEN 80
                 60 PRINT "C is less or equal to B"

@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/Example" />
             <option value="$PROJECT_DIR$/Interpreter" />
             <option value="$PROJECT_DIR$/Parser" />
+            <option value="$PROJECT_DIR$/Transpiler" />
           </set>
         </option>
       </GradleProjectSettings>

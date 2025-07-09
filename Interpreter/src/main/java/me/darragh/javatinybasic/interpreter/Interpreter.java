@@ -35,11 +35,14 @@ public class Interpreter {
     public Interpreter(List<Token> tokens, InterpreterInputEvent inputEvent,
                        InterpreterOutputEvent outputEvent, InterpreterFinishedEvent finishedEvent) {
         // Cache the tokens and line numbers for quick access
-        this.tokens = tokens.stream().collect(
-                Collectors.toMap(Token::lineNumber, token -> token));
-        this.lineNumbers = tokens.stream().map(Token::lineNumber)
-                .collect(Collectors.toList());
-        this.lineNumbers.sort(Integer::compareTo);
+        this.tokens = tokens.stream()
+                .sorted(Comparator.comparing(Token::lineNumber))
+                .collect(Collectors.toMap(
+                        Token::lineNumber,
+                        token -> token,
+                        (a, b) -> a,
+                        LinkedHashMap::new));
+        this.lineNumbers = new ArrayList<>(this.tokens.keySet());
 
         // Prepare the variables map
         this.variables = new HashMap<>();

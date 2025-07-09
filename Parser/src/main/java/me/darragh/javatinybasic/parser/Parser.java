@@ -24,6 +24,8 @@ import java.util.regex.Pattern;
 /**
  * Parses the source of a Tiny BASIC program into a list of tokens.
  */
+// TODO: Improve code quality
+// TODO: Improve code compatability, i.e., no requirement to have spaces between tokens with a common delimiter in-between (e.g., LET A=5)
 @Data
 @RequiredArgsConstructor
 public class Parser {
@@ -334,7 +336,7 @@ public class Parser {
 
     private static int parseTokenGotoLineNumber(String[] parts, String lineNumberPart) throws ParserInvalidLineException {
         if (!lineNumberPart.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
-            throw ParserInvalidLineException.create("Line number to GOTO must be a positive integer: ", String.join(" ", parts));
+            throw ParserInvalidLineException.create("Line number to GOSUB must be a positive integer: ", String.join(" ", parts));
         }
         int lineNumberToGoto;
         try {

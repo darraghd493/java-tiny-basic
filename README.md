@@ -2,11 +2,15 @@
 
 A Tiny BASIC parser, interpreter and transpiler (to Java bytecode) written in Java.
 
+**Note:** This project is more-or-less very experimental and does not have no-where near complete support for the Tiny BASIC language. I.e., it's tokenisation process is very basic and not suitable for this language.
+
 # Features:
 
 - Core Tiny BASIC language support
-- Parser and **TODO** interpreter
-- **TODO** Transpiler to Java bytecode
+- Parser and interpreter
+- Transpiler to Java bytecode (BETA)
+  - very rudimentary and not fully functional
+  - if statements are prone to breaking due to the contrast in handling of control flow in Java vs Tiny BASIC
 - **TODO** Unit tests for parser and interpreter
 - **TODO** Example programs (low priority)
 
@@ -109,3 +113,14 @@ public class InterpreterDemo {
 ```
 
 This attempts to be faithful to the [original Tiny BASIC syntax](http://tinybasic.cyningstan.org.uk/page/12/tiny-basic-manual), but may not support all features or edge cases. The parser is designed to be simple and easy to understand, so it may not handle all possible syntax errors gracefully.
+
+## Comparison Operators
+
+```
+=   EQUAL
+<>  NOT_EQUAL
+<   LESS_THAN
+>   GREATER_THAN
+<=  LESS_THAN_OR_EQUAL
+>=  GREATER_THAN_OR_EQUAL
+```

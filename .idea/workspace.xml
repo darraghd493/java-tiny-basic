@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Interpreter): functional, RETURN">
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Transpiler): unfinished prototype">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +86,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor": "Debug",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor": "Run",
     "Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor": "Debug",
-    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Run",
+    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Debug",
+    "Gradle.java-tiny-basic:Example [:Example:TranspilerDemo.main()].executor": "Run",
     "Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/darra/projects/java-tiny-basic/AST/src/test/java",
     "node.js.detected.package.eslint": "true",
@@ -97,7 +103,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Interpreter/src/main/java/me/darragh/Main.java",
+    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Transpiler/src/main/java/me/darragh/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -121,7 +127,7 @@
       <recent name="me.darragh.javatinybasic.ast.expression.statement" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Timed Interpreter Demo">
+  <component name="RunManager" selected="Application.Transpiler Demo">
     <configuration name="Interpreter Demo" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="InterpreterDemo" />
       <module name="java-tiny-basic.Example.test" />
@@ -143,6 +149,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Transpiler Demo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="TranspilerDemo" />
+      <module name="java-tiny-basic.Example.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,6 +169,7 @@
       <item itemvalue="Application.Parser Demo" />
       <item itemvalue="Application.Interpreter Demo" />
       <item itemvalue="Application.Timed Interpreter Demo" />
+      <item itemvalue="Application.Transpiler Demo" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -176,7 +190,8 @@
       <workItem from="1751994778917" duration="256000" />
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
-      <workItem from="1752059213091" duration="4006000" />
+      <workItem from="1752059213091" duration="16334000" />
+      <workItem from="1752086597359" duration="9245000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -234,7 +249,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752066800601</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chore: README.md">
+      <option name="closed" value="true" />
+      <created>1752066953251</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752066953251</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(Transpiler): partially functional">
+      <option name="closed" value="true" />
+      <created>1752092721525</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752092721525</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,9 +288,11 @@
     <MESSAGE value="feat(Parser): REM comments (misinformed), PRINT strings" />
     <MESSAGE value="feat(Parser): FOR loops, improved parsing" />
     <MESSAGE value="feat(Parser): GOSUB" />
-    <MESSAGE value="chore: README.md" />
     <MESSAGE value="feat(Interpreter): functional, RETURN" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Interpreter): functional, RETURN" />
+    <MESSAGE value="chore: README.md" />
+    <MESSAGE value="feat(Transpiler): unfinished prototype" />
+    <MESSAGE value="feat(Transpiler): unfinished prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Transpiler): unfinished prototype" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

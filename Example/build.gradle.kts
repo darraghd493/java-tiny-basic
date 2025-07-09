@@ -19,4 +19,5 @@ dependencies {
     implementation(project(":AST"))
     implementation(project(":Interpreter"))
     implementation(project(":Parser"))
+    implementation(project(":Transpiler"))
 }

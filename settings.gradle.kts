@@ -5,3 +5,5 @@ include("Interpreter")
 include("Parser")
 
 include("Example")
+
+include("Transpiler")
