@@ -17,7 +17,9 @@ public class ParserDemo {
             80 FOR I = 1 TO C STEP 2
             90 PRINT I
             100 NEXT I
-            110 END
+            110 GOSUB 20
+            120 GOSUB 30
+            130 END
             """);
         for (Token token : tokens) {
             System.out.printf("%s\t%s\t%s%n", token.lineNumber(), token.statement(), token.expression());

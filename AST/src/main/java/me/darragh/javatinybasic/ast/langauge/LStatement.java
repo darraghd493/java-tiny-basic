@@ -14,6 +14,7 @@ public enum LStatement {
     FOR("FOR"), // {line number} FOR {variable} = {start} TO {end} STEP {step}
     NEXT("NEXT"), // {line number} NEXT {variable} (loop control)
     GOTO("GOTO"), // {line number} GOTO {line number}
+    GOSUB("GOSUB"), // {line number} GOSUB {line number}
     END("END"); // {line number} END
 
     private final String token;

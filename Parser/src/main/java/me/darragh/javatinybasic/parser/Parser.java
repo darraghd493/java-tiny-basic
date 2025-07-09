@@ -102,6 +102,7 @@ public class Parser {
             case FOR -> generateForToken(lineNumber, parts);
             case NEXT -> generateNextToken(lineNumber, parts);
             case GOTO -> generateGotoToken(lineNumber, parts);
+            case GOSUB -> generateGosubToken(lineNumber, parts);
             case END -> generateEndToken(lineNumber);
         };
     }
@@ -277,7 +278,7 @@ public class Parser {
     private static @NotNull Token generateNextToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
         if (parts.length != 3) {
             throw ParserInvalidLineException.create(
-                    "GOTO statement must be in the form: {line number} GOTO {line number}",
+                    "NEXT statement must be in the form: {line number} GOTO {variable}",
                     String.join(" ", parts)
             );
         }
@@ -302,6 +303,21 @@ public class Parser {
 
         String lineNumberToGotoStr = parts[2];
         return TokenFactory.createGotoToken(
+                lineNumber,
+                parseTokenGotoLineNumber(parts, lineNumberToGotoStr)
+        );
+    }
+
+    private static @NotNull Token generateGosubToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
+        if (parts.length != 3) {
+            throw ParserInvalidLineException.create(
+                    "GOSUB statement must be in the form: {line number} GOTO {line number}",
+                    String.join(" ", parts)
+            );
+        }
+
+        String lineNumberToGotoStr = parts[2];
+        return TokenFactory.createGosubToken(
                 lineNumber,
                 parseTokenGotoLineNumber(parts, lineNumberToGotoStr)
         );

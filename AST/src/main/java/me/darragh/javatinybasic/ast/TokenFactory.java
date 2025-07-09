@@ -93,6 +93,14 @@ public class TokenFactory {
         );
     }
 
+    public static @NotNull Token createGosubToken(int lineNumber, int lineNumberToGoto) {
+        return new Token(
+                lineNumber,
+                LStatement.GOSUB,
+                new LineNumberExpression(lineNumberToGoto)
+        );
+    }
+
     public static @NotNull Token createEndToken(int lineNumber) {
         return new Token(
                 lineNumber,
