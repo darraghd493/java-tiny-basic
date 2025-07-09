@@ -17,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -67,17 +66,16 @@ public class Parser {
      * @throws ParserInvalidLineException If the line is invalid or cannot be parsed.
      */
     public static @Nullable Token parseLine(@NotNull String line) throws ParserInvalidLineException {
-        String tokens = MULTI_SPACE_PATTERN.matcher(line).replaceAll(" ").trim();
-        String[] parts = tokens.split(" ");
-        if (parts.length == 0) {
+        List<String> parts = Lexer.tokenise(line);
+        if (parts.isEmpty()) {
             throw ParserInvalidLineException.create("Line cannot be empty: ", line);
         }
-        if (parts.length < 2) {
+        if (parts.size() < 2) {
             throw ParserInvalidLineException.create("Line does not have {line number} {statement}: ", line);
         }
 
         // Fetch line number
-        String lineNumberStr = parts[0];
+        String lineNumberStr = parts.getFirst();
         if (!lineNumberStr.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
             throw ParserInvalidLineException.create("Line number must be a positive integer: ", line);
         }
@@ -94,7 +92,7 @@ public class Parser {
         }
 
         // Identify the statement type
-        LStatement statement = LStatement.fromToken(parts[1]);
+        LStatement statement = LStatement.fromToken(parts.get(1));
         return switch (statement) {
             case REM -> null;
             case LET -> generateLetToken(lineNumber, parts);
@@ -111,15 +109,15 @@ public class Parser {
     }
 
     //region Token Generators
-    private static @NotNull Token generateLetToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length < 5 || !parts[3].equals(LRelationalOperator.EQUAL.getSymbol())) {
+    private static @NotNull Token generateLetToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 5 || !parts.get(3).equals(LRelationalOperator.EQUAL.getSymbol())) {
             throw ParserInvalidLineException.create(
                     "LET statement must be in the form: {line number} LET {variable} %s {expression}".formatted(LRelationalOperator.EQUAL.getSymbol()),
                     String.join(" ", parts)
             );
         }
 
-        String variableName = parts[2];
+        String variableName = parts.get(2);
         if (variableName.isEmpty()) {
             throw ParserInvalidLineException.create("Variable name cannot be empty in LET statement: ", String.join(" ", parts));
         }
@@ -127,21 +125,19 @@ public class Parser {
         return TokenFactory.createLetToken(
                 lineNumber,
                 variableName,
-                parseValueExpression(
-                        Arrays.copyOfRange(parts, 4, parts.length)
-                )
+                parseValueExpression(parts.subList(4, parts.size()), true)
         );
     }
 
-    private static @NotNull Token generatePrintToken(int lineNumber, String[] parts) throws ParserInvalidLineException { // TODO: Improve code quality - very poor readability
-        if (parts.length < 3) {
+    private static @NotNull Token generatePrintToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 3) {
             throw ParserInvalidLineException.create(
                     "PRINT statement must be in the form: {line number} PRINT {expression}",
                     String.join(" ", parts)
-                    );
+            );
         }
 
-        String exprLine = String.join(" ", Arrays.copyOfRange(parts, 2, parts.length));
+        String exprLine = String.join(" ", parts.subList(2, parts.size()));
         List<String> exprParts = splitByCommaOutsideQuotes(exprLine);
 
         List<Expression> expressions = new ArrayList<>();
@@ -150,7 +146,7 @@ public class Parser {
             if (trimmed.startsWith("\"") && trimmed.endsWith("\"") && trimmed.length() >= 2) {
                 expressions.add(new StringValueExpression(trimmed.substring(1, trimmed.length() - 1)));
             } else {
-                String[] tokens = trimmed.split("\\s+");
+                List<String> tokens = List.of(trimmed.split("\\s+"));
                 expressions.add(parseValueExpression(tokens, true));
             }
         }
@@ -161,15 +157,15 @@ public class Parser {
         );
     }
 
-    private static @NotNull Token generateInputToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length < 3) {
+    private static @NotNull Token generateInputToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 3) {
             throw ParserInvalidLineException.create(
                     "INPUT statement must be in the form: {line number} INPUT {variable}",
                     String.join(" ", parts)
             );
         }
 
-        String variableName = parts[2];
+        String variableName = parts.get(2);
         if (variableName.isEmpty()) {
             throw ParserInvalidLineException.create("Variable name cannot be empty in INPUT statement: ", String.join(" ", parts));
         }
@@ -181,8 +177,8 @@ public class Parser {
         return TokenFactory.createInputToken(lineNumber, variableName);
     }
 
-    private static @NotNull Token generateIfToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length < 7) {
+    private static @NotNull Token generateIfToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 7) {
             throw ParserInvalidLineException.create(
                     "IF statement must be in the form: {line number} IF {condition} THEN {line number}",
                     String.join(" ", parts)
@@ -191,14 +187,14 @@ public class Parser {
 
         // Find the THEN keyword
         int thenIndex = -1;
-        for (int i = 2; i < parts.length; i++) {
-            if (parts[i].equalsIgnoreCase(LReservedKeyword.THEN.getToken())) {
+        for (int i = 2; i < parts.size(); i++) {
+            if (parts.get(i).equalsIgnoreCase(LReservedKeyword.THEN.getToken())) {
                 thenIndex = i;
                 break;
             }
         }
 
-        if (thenIndex < 3 || thenIndex >= parts.length - 1) {
+        if (thenIndex < 3 || thenIndex >= parts.size() - 1) {
             throw ParserInvalidLineException.create(
                     "IF statement must contain a valid THEN keyword: ",
                     String.join(" ", parts)
@@ -211,7 +207,7 @@ public class Parser {
 
         for (int i = 2; i < thenIndex; i++) {
             for (LRelationalOperator operator : LRelationalOperator.values()) {
-                if (parts[i].equalsIgnoreCase(operator.getSymbol())) {
+                if (parts.get(i).equalsIgnoreCase(operator.getSymbol())) {
                     relationalOperator = operator;
                     operatorIndex = i;
                     break;
@@ -228,8 +224,8 @@ public class Parser {
         }
 
         // Parse the value expressions on either side of the operator
-        ValueExpression valueA = parseValueExpression(Arrays.copyOfRange(parts, 2, operatorIndex));
-        ValueExpression valueB = parseValueExpression(Arrays.copyOfRange(parts, operatorIndex + 1, thenIndex));
+        ValueExpression valueA = parseValueExpression(parts.subList(2, operatorIndex)),
+                valueB = parseValueExpression(parts.subList(operatorIndex + 1, thenIndex));
 
         // Parse the line number to GOTO
         return TokenFactory.createIfToken(
@@ -237,35 +233,35 @@ public class Parser {
                 valueA,
                 valueB,
                 relationalOperator,
-                parseTokenGotoLineNumber(parts, parts[thenIndex + 1])
+                parseTokenGotoLineNumber(parts, parts.get(thenIndex + 1))
         );
     }
 
-    private static @NotNull Token generateForToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length < 7 || !parts[5].equals(LReservedKeyword.TO.getToken())) {
+    private static @NotNull Token generateForToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 7 || !parts.get(5).equals(LReservedKeyword.TO.getToken())) {
             throw ParserInvalidLineException.create(
                     "FOR statement must be in the form: {line number} FOR {variable} = {start} TO {end} [STEP {step}]",
                     String.join(" ", parts)
             );
         }
 
-        String variableName = parts[2];
+        String variableName = parts.get(2);
         if (variableName.isEmpty() || !isValidVariableName(variableName)) {
             throw ParserInvalidLineException.create("Invalid variable name in FOR statement: ", String.join(" ", parts));
         }
 
         ValueExpression startValue = parseValueExpression(
-                Arrays.copyOfRange(parts, 4, 5), false
+                parts.subList(4, 5), false
         );
         ValueExpression endValue = parseValueExpression(
-                Arrays.copyOfRange(parts, 6, 7), false
+                parts.subList(6, 7), false
         );
 
         ValueExpression stepValue = new ValueExpression(1); // Default step value
 
-        if (parts.length >= 9 && parts[7].equals(LReservedKeyword.STEP.getToken())) {
+        if (parts.size() >= 9 && parts.get(7).equals(LReservedKeyword.STEP.getToken())) {
             stepValue = parseValueExpression(
-                    Arrays.copyOfRange(parts, 8, 9), false
+                    parts.subList(8, 9), false
             );
         }
 
@@ -278,15 +274,15 @@ public class Parser {
         );
     }
 
-    private static @NotNull Token generateNextToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length != 3) {
+    private static @NotNull Token generateNextToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() != 3) {
             throw ParserInvalidLineException.create(
                     "NEXT statement must be in the form: {line number} GOTO {variable}",
                     String.join(" ", parts)
             );
         }
 
-        String variableName = parts[2];
+        String variableName = parts.get(2);
         if (variableName.isEmpty() || !isValidVariableName(variableName)) {
             throw ParserInvalidLineException.create("Invalid variable name in NEXT statement: ", String.join(" ", parts));
         }
@@ -296,30 +292,30 @@ public class Parser {
         );
     }
 
-    private static @NotNull Token generateGotoToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length != 3) {
+    private static @NotNull Token generateGotoToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() != 3) {
             throw ParserInvalidLineException.create(
                     "GOTO statement must be in the form: {line number} GOTO {line number}",
                     String.join(" ", parts)
             );
         }
 
-        String lineNumberToGotoStr = parts[2];
+        String lineNumberToGotoStr = parts.get(2);
         return TokenFactory.createGotoToken(
                 lineNumber,
                 parseTokenGotoLineNumber(parts, lineNumberToGotoStr)
         );
     }
 
-    private static @NotNull Token generateGosubToken(int lineNumber, String[] parts) throws ParserInvalidLineException {
-        if (parts.length != 3) {
+    private static @NotNull Token generateGosubToken(int lineNumber, List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() != 3) {
             throw ParserInvalidLineException.create(
                     "GOSUB statement must be in the form: {line number} GOTO {line number}",
                     String.join(" ", parts)
             );
         }
 
-        String lineNumberToGotoStr = parts[2];
+        String lineNumberToGotoStr = parts.get(2);
         return TokenFactory.createGosubToken(
                 lineNumber,
                 parseTokenGotoLineNumber(parts, lineNumberToGotoStr)
@@ -334,7 +330,7 @@ public class Parser {
         return TokenFactory.createEndToken(lineNumber);
     }
 
-    private static int parseTokenGotoLineNumber(String[] parts, String lineNumberPart) throws ParserInvalidLineException {
+    private static int parseTokenGotoLineNumber(List<String> parts, String lineNumberPart) throws ParserInvalidLineException {
         if (!lineNumberPart.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
             throw ParserInvalidLineException.create("Line number to GOSUB must be a positive integer: ", String.join(" ", parts));
         }
@@ -352,35 +348,34 @@ public class Parser {
     //endregion
 
     //region Expression Generators
-    private static ValueExpression parseValueExpression(@NonNull String[] parts) throws ParserInvalidLineException {
+    private static ValueExpression parseValueExpression(@NonNull List<String> parts) throws ParserInvalidLineException {
         return parseValueExpression(parts, true);
     }
 
-    private static ValueExpression parseValueExpression(@NotNull String[] parts, boolean supportMathematical) throws ParserInvalidLineException {
-        return switch (parts.length) {
-            case 0 -> throw ParserInvalidLineException.create("Value expression cannot be empty: ", String.join(" ", parts));
-            case 1 -> { // Handle variables/literals
-                String part = parts[0];
-                if (part.matches(POSITIVE_NUMBER_PATTERN.pattern())) { // integer literal
-                    yield new ValueExpression(Integer.parseInt(part));
-                } else { // variable name
-                    if (!isValidVariableName(part)) {
-                        throw ParserInvalidLineException.create("Invalid variable name in value expression: ", String.join(" ", parts));
-                    }
-                    yield new ValueExpression(part);
+    private static ValueExpression parseValueExpression(@NotNull List<String> parts, boolean supportMathematical) throws ParserInvalidLineException {
+        int size = parts.size();
+        if (size == 0) {
+            throw ParserInvalidLineException.create("Value expression cannot be empty: ", String.join(" ", parts));
+        } else if (size == 1) {
+            String part = parts.get(0);
+            if (part.matches(POSITIVE_NUMBER_PATTERN.pattern())) {
+                return new ValueExpression(Integer.parseInt(part));
+            } else {
+                if (!isValidVariableName(part)) {
+                    throw ParserInvalidLineException.create("Invalid variable name in value expression: ", String.join(" ", parts));
                 }
+                return new ValueExpression(part);
             }
-            default -> {
-                if (!supportMathematical) {
-                    throw ParserInvalidLineException.create("Mathematical expressions are not supported in this context: ", String.join(" ", parts));
-                }
-                yield new ValueExpression(parseMathematicalExpression(parts));
+        } else {
+            if (!supportMathematical) {
+                throw ParserInvalidLineException.create("Mathematical expressions are not supported in this context: ", String.join(" ", parts));
             }
-        };
+            return new ValueExpression(parseMathematicalExpression(parts));
+        }
     }
 
-    public static MathematicalExpression parseMathematicalExpression(@NotNull String[] parts) throws ParserInvalidLineException {
-        if (parts.length < 3) {
+    public static MathematicalExpression parseMathematicalExpression(@NotNull List<String> parts) throws ParserInvalidLineException {
+        if (parts.size() < 3) {
             throw ParserInvalidLineException.create("Mathematical expression must have at least 3 parts: ", String.join(" ", parts));
         }
 
@@ -391,16 +386,15 @@ public class Parser {
         for (String s : parts) {
             String part = s.trim();
             if (part.isEmpty()) {
-                continue; // Skip empty parts
+                continue;
             }
-
             if (expectingOperator) {
                 LArithmeticOperator operator = LArithmeticOperator.fromSymbol(part);
                 arithmeticOperators.add(operator);
                 expectingOperator = false;
             } else {
-                ValueExpression valueExpression = parseValueExpression(new String[]{part}, false);
-                valueExpressions.add(valueExpression);
+                // Use List with single element for recursive call
+                valueExpressions.add(parseValueExpression(List.of(part), false));
                 expectingOperator = true;
             }
         }
@@ -409,7 +403,7 @@ public class Parser {
             throw ParserInvalidLineException.create("Mathematical expression must contain at least one value: ", String.join(" ", parts));
         }
 
-        if (!expectingOperator) { // inverse
+        if (!expectingOperator) {
             throw ParserInvalidLineException.create("Mathematical expression cannot end with an operator: ", String.join(" ", parts));
         }
 

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="chore: README.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Parser): lexer">
+      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +54,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="chore: README.md" />
-        <option name="rewordedMessage" value="chore: README.md" />
+        <option name="originalMessage" value="feat(Parser): lexer" />
+        <option name="rewordedMessage" value="feat(Parser): lexer" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="d5129d61a757c711d07c19dd1bb44ed32aad083f" />
+    <option name="onto" value="96e261ad17a7a256f074827ef76ab5e8f8b0c103" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -187,7 +186,7 @@
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
-      <workItem from="1752086597359" duration="10041000" />
+      <workItem from="1752086597359" duration="10798000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -301,7 +300,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752097259615</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="chore: README.md formatting">
+      <option name="closed" value="true" />
+      <created>1752097372283</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752097372283</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat(Parser): lexer">
+      <option name="closed" value="true" />
+      <created>1752098070935</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752098070935</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat(Parser): lexer">
+      <option name="closed" value="true" />
+      <created>1752098087325</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752098087325</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +354,9 @@
     <MESSAGE value="feat(Transpiler): functional" />
     <MESSAGE value="refactor: annotations" />
     <MESSAGE value="chore: README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: README.md" />
+    <MESSAGE value="chore: README.md formatting" />
+    <MESSAGE value="feat(Parser): lexer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Parser): lexer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
