@@ -55,12 +55,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="feat(Transpiler): unfinished prototype" />
-        <option name="rewordedMessage" value="feat(Transpiler): functional" />
+        <option name="originalMessage" value="chore: README.md" />
+        <option name="rewordedMessage" value="chore: README.md" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="c9812114fac220f927e679236805866e94f3ae13" />
+    <option name="onto" value="d5129d61a757c711d07c19dd1bb44ed32aad083f" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -187,7 +187,7 @@
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
-      <workItem from="1752086597359" duration="9923000" />
+      <workItem from="1752086597359" duration="10041000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -293,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752096946934</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chore: README.md">
+      <option name="closed" value="true" />
+      <created>1752097259615</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752097259615</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -18,7 +18,7 @@ A Tiny BASIC parser, interpreter and transpiler (to Java bytecode) written in Ja
 
 ## Parser
 
-**Note:** The parser is not yet complete and does not support all Tiny BASIC syntax.
+**Note:** The parser is not yet complete and does not support all Tiny BASIC syntax.  
 **Note:** The parser does not lexically analyse the input, being a major limitation.
 
 ```java
