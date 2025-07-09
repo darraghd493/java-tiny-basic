@@ -10,6 +10,7 @@ import me.darragh.javatinybasic.ast.expression.statement.LETExpression;
 import me.darragh.javatinybasic.ast.expression.statement.PRINTExpression;
 import me.darragh.javatinybasic.ast.langauge.LArithmeticOperator;
 import me.darragh.javatinybasic.ast.langauge.LStatement;
+import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
@@ -57,7 +58,7 @@ public class Transpiler {
     //endregion
 
     //region Constructor
-    public Transpiler(List<Token> tokens) {
+    public Transpiler(@NotNull List<Token> tokens) {
         // Cache the tokens and line numbers for quick access
         this.tokens = tokens.stream()
                 .sorted(Comparator.comparing(Token::lineNumber))
@@ -137,7 +138,7 @@ public class Transpiler {
                 placement.jumpInsnNode.label = placement.targetLabel != null ? placement.targetLabel : this.labelNodes.get(placement.lineNumber));
     }
 
-    public void toFile(Path path) {
+    public void toFile(@NotNull Path path) {
         if (!this.generated) {
             this.generate();
         }
@@ -167,7 +168,7 @@ public class Transpiler {
     }
 
     //region Method Instructions Generation
-    private void generateMethodInstructions(MethodNode methodNode, List<Token> tokens) {
+    private void generateMethodInstructions(@NotNull MethodNode methodNode, @NotNull List<Token> tokens) {
         InsnList list = new InsnList();
 
         for (int i = 0; i < tokens.size(); i++) {
@@ -187,7 +188,7 @@ public class Transpiler {
                 case INPUT -> this.generateInputInstructions(token, labelList);
                 case IF -> this.generateIfInstructions(token, labelList);
                 case FOR -> this.generateForInstructions(token, labelList);
-                case NEXT -> this.generateNextInstructions(token, labelList);
+                case NEXT -> this.generateNextInstructions(labelList);
                 case GOTO -> this.generateGotoInstructions(token, labelList);
                 case GOSUB -> this.generateGosubInstructions(tokens, token, labelList);
                 case RETURN -> this.generateReturnInstructions(labelList);
@@ -204,7 +205,7 @@ public class Transpiler {
         methodNode.instructions = list;
     }
 
-    private void generateLetInstructions(Token token, InsnList list) {
+    private void generateLetInstructions(@NotNull Token token, @NotNull InsnList list) {
         LETExpression letExpression = (LETExpression) token.expression();
         assert letExpression != null : "LET expression should not be null";
 
@@ -215,7 +216,7 @@ public class Transpiler {
         list.add(new FieldInsnNode(PUTSTATIC, CLASS_NAME, variableName, "I"));
     }
 
-    private void generatePrintInstructions(Token token, InsnList list) {
+    private void generatePrintInstructions(@NotNull Token token, @NotNull InsnList list) {
         PRINTExpression printExpression = (PRINTExpression) token.expression();
         assert printExpression != null : "PRINT expression should not be null";
 
@@ -271,7 +272,7 @@ public class Transpiler {
         }
     }
 
-    private void generateInputInstructions(Token token, InsnList list) {
+    private void generateInputInstructions(@NotNull Token token, @NotNull InsnList list) {
         this.usesScanner = true; // We will use Scanner for input
 
         VariableNameExpression variableNameExpression = (VariableNameExpression) token.expression();
@@ -285,7 +286,7 @@ public class Transpiler {
         list.add(new FieldInsnNode(PUTSTATIC, CLASS_NAME, variableName, "I"));
     }
 
-    private void generateIfInstructions(Token token, InsnList list) { // TODO: Verify
+    private void generateIfInstructions(@NotNull Token token, @NotNull InsnList list) { // TODO: Verify
         IFExpression ifExpression = (IFExpression) token.expression();
         assert ifExpression != null : "If expression should not be null";
 
@@ -311,7 +312,7 @@ public class Transpiler {
         list.add(jumpIfTrue);
     }
 
-    private void generateForInstructions(Token token, InsnList list) {
+    private void generateForInstructions(@NotNull Token token, @NotNull InsnList list) {
         FORExpression forExpression = (FORExpression)token.expression();
         assert forExpression != null;
 
@@ -336,7 +337,7 @@ public class Transpiler {
         needLabelNodes.add(new LabelPlacement(-1, exit, end));
     }
 
-    private void generateNextInstructions(Token token, InsnList list) {
+    private void generateNextInstructions(@NotNull InsnList list) {
         LoopContext ctx = loopStack.pop();
         String var = ctx.variableName;
         this.generateVariable(var);
@@ -352,7 +353,7 @@ public class Transpiler {
         list.add(ctx.end);
     }
 
-    private void generateGotoInstructions(Token token, InsnList list) {
+    private void generateGotoInstructions(@NotNull Token token, @NotNull InsnList list) {
         LineNumberExpression lineNumberExpression = (LineNumberExpression) token.expression();
         assert lineNumberExpression != null : "LineNumberExpression should not be null";
 
@@ -363,7 +364,7 @@ public class Transpiler {
         ));
     }
 
-    private void generateGosubInstructions(List<Token> tokens, Token token, InsnList list) {
+    private void generateGosubInstructions(@NotNull List<Token> tokens, @NotNull Token token, @NotNull InsnList list) {
         LineNumberExpression lineNumberExpression = (LineNumberExpression) token.expression();
         assert lineNumberExpression != null : "LineNumberExpression should not be null";
 
@@ -400,11 +401,11 @@ public class Transpiler {
         list.add(new MethodInsnNode(INVOKESTATIC, CLASS_NAME, subroutineName, "()V", false));
     }
 
-    private void generateReturnInstructions(InsnList list) {
+    private void generateReturnInstructions(@NotNull InsnList list) {
         list.add(new InsnNode(RETURN));
     }
 
-    private void generateEndInstructions(InsnList list) {
+    private void generateEndInstructions(@NotNull InsnList list) {
         list.add(new InsnNode(ICONST_0));
         list.add(new MethodInsnNode(INVOKESTATIC, "java/lang/System", "exit", "(I)V", false));
     }

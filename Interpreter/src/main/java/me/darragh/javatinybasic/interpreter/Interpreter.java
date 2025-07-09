@@ -9,6 +9,7 @@ import me.darragh.javatinybasic.ast.expression.statement.LETExpression;
 import me.darragh.javatinybasic.ast.expression.statement.PRINTExpression;
 import me.darragh.javatinybasic.ast.langauge.LArithmeticOperator;
 import me.darragh.javatinybasic.ast.langauge.LRelationalOperator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -32,8 +33,8 @@ public class Interpreter {
     private int temporaryLineNumber; // for GOSUB
 
     //region Constructor
-    public Interpreter(List<Token> tokens, InterpreterInputEvent inputEvent,
-                       InterpreterOutputEvent outputEvent, InterpreterFinishedEvent finishedEvent) {
+    public Interpreter(@NotNull List<Token> tokens, @NotNull InterpreterInputEvent inputEvent,
+                       @NotNull InterpreterOutputEvent outputEvent, @NotNull InterpreterFinishedEvent finishedEvent) {
         // Cache the tokens and line numbers for quick access
         this.tokens = tokens.stream()
                 .sorted(Comparator.comparing(Token::lineNumber))

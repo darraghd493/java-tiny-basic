@@ -12,7 +12,6 @@ A Tiny BASIC parser, interpreter and transpiler (to Java bytecode) written in Ja
   - very rudimentary and not fully functional
   - if statements are prone to breaking due to the contrast in handling of control flow in Java vs Tiny BASIC
 - **TODO** Unit tests for parser and interpreter
-- **TODO** Example programs (low priority)
 
 # Usage
 

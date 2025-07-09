@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Transpiler): unfinished prototype">
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="chore: README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" afterDir="false" />
     </list>
@@ -59,12 +57,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="fix: parser (functional demo), restructure" />
-        <option name="rewordedMessage" value="fix: parser (functional demo), restructure" />
+        <option name="originalMessage" value="feat(Transpiler): unfinished prototype" />
+        <option name="rewordedMessage" value="feat(Transpiler): functional" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="2ff748c049dd4b1984326f2e5255a2f8d97540e6" />
+    <option name="onto" value="c9812114fac220f927e679236805866e94f3ae13" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -84,32 +82,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor": "Run",
-    "Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor": "Debug",
-    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Debug",
-    "Gradle.java-tiny-basic:Example [:Example:TranspilerDemo.main()].executor": "Run",
-    "Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/darra/projects/java-tiny-basic/AST/src/test/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Transpiler/src/main/java/me/darragh/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.java-tiny-basic:Example [:Example:TranspilerDemo.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/darra/projects/java-tiny-basic/AST/src/test/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/darra/projects/java-tiny-basic/Transpiler/src/main/java/me/darragh/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/AST/src/test/java" />
@@ -191,7 +189,7 @@
       <workItem from="1752012860722" duration="9614000" />
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
-      <workItem from="1752086597359" duration="9245000" />
+      <workItem from="1752086597359" duration="9417000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -265,7 +263,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752092721525</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(Transpiler): partially functional">
+      <option name="closed" value="true" />
+      <created>1752096577952</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752096577952</updated>
+    </task>
+    <task id="LOCAL-00011" summary="chore: README.md">
+      <option name="closed" value="true" />
+      <created>1752096620267</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752096620267</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,10 +303,12 @@
     <MESSAGE value="feat(Parser): FOR loops, improved parsing" />
     <MESSAGE value="feat(Parser): GOSUB" />
     <MESSAGE value="feat(Interpreter): functional, RETURN" />
+    <MESSAGE value="feat(Transpiler): unfinished prototype" />
+    <MESSAGE value="feat(Transpiler): unfinished prototype" />
+    <MESSAGE value="feat(Transpiler): partially functional" />
+    <MESSAGE value="feat(Transpiler): functional" />
     <MESSAGE value="chore: README.md" />
-    <MESSAGE value="feat(Transpiler): unfinished prototype" />
-    <MESSAGE value="feat(Transpiler): unfinished prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Transpiler): unfinished prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
