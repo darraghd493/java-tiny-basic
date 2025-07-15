@@ -5,36 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Parser): lexer">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Serials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/TokenFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/Expression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/LineNumberExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/MathematicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/MathematicalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/StringValueExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/ValueExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/VariableNameExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/FORExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/IFExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/LETExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/LETExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/expression/statement/PRINTExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LArithmeticOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LArithmeticOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LRelationalOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LRelationalOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LReservedKeyword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/AST/src/main/java/me/darragh/javatinybasic/ast/langauge/LStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/InterpreterDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/InterpreterDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/ParserDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TimedInterpreterDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TimedInterpreterDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example/src/test/java/TranspilerDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterFinishedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterFinishedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterInputEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interpreter/src/main/java/me/darragh/javatinybasic/interpreter/InterpreterOutputEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/ParserInvalidLineException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Transpiler/src/main/java/me/darragh/javatinybasic/transpiler/Transpiler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +62,12 @@
     <option name="currentCommit" value="1" />
     <option name="onto" value="96e261ad17a7a256f074827ef76ab5e8f8b0c103" />
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/darraghd493/java-tiny-basic&quot;,
-    &quot;accountId&quot;: &quot;54d5dfe9-6762-4ad5-ac91-ddc555a668b1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/darraghd493/java-tiny-basic",
+    "accountId": "86454d38-fc33-4ee6-8357-6407ed6de21a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -108,32 +80,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.java-tiny-basic:Example [:Example:TranspilerDemo.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/darra/projects/java-tiny-basic/AST/src/test/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/darra/projects/java-tiny-basic/Transpiler/src/main/java/me/darragh/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.java-tiny-basic:Example [:Example:InterpreterDemo.main()].executor": "Run",
+    "Gradle.java-tiny-basic:Example [:Example:ParserDemo.main()].executor": "Debug",
+    "Gradle.java-tiny-basic:Example [:Example:TimedInterpreterDemo.main()].executor": "Debug",
+    "Gradle.java-tiny-basic:Example [:Example:TranspilerDemo.main()].executor": "Run",
+    "Gradle.java-tiny-basic:Parser [:Parser:ParserDemo.main()].executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/darra/Projects/java-tiny-basic",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/darra/projects/java-tiny-basic/Transpiler/src/main/java/me/darragh/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/AST/src/test/java" />
@@ -180,29 +152,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Parser Demo" />
       <item itemvalue="Application.Interpreter Demo" />
       <item itemvalue="Application.Timed Interpreter Demo" />
       <item itemvalue="Application.Transpiler Demo" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -216,6 +171,7 @@
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
       <workItem from="1752086597359" duration="11826000" />
+      <workItem from="1752585495611" duration="276000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
