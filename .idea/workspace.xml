@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="feat(Parser): lexer">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d7c6a59c-9b86-4fbf-8018-f2c1fcb45f6a" name="Changes" comment="chore: reorganise project">
+      <change beforePath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/src/main/java/me/darragh/javatinybasic/parser/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +170,7 @@
       <workItem from="1752052654773" duration="567000" />
       <workItem from="1752059213091" duration="16334000" />
       <workItem from="1752086597359" duration="11826000" />
-      <workItem from="1752585495611" duration="276000" />
+      <workItem from="1752585495611" duration="474000" />
     </task>
     <task id="LOCAL-00001" summary="fix: parser (functional demo), restructure">
       <option name="closed" value="true" />
@@ -317,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752098130419</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="chore: reorganise project">
+      <option name="closed" value="true" />
+      <created>1752585925874</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752585925874</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +356,8 @@
     <MESSAGE value="chore: README.md" />
     <MESSAGE value="chore: README.md formatting" />
     <MESSAGE value="feat(Parser): lexer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Parser): lexer" />
+    <MESSAGE value="chore: reorganise project" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: reorganise project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -30,12 +30,9 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 public class Parser {
     //region Patterns
-    private static final Pattern MULTI_SPACE_PATTERN = Pattern.compile("\\s+");
     private static final Pattern POSITIVE_NUMBER_PATTERN = Pattern.compile("^\\d+");
     private static final Pattern VALID_VARIABLE_NAME_PATTERN = Pattern.compile("[A-Z]"); // Classic tiny BASIC variable names are single uppercase letters
     //endregion
-
-    public static final String CHARACTER_START_END_CHAR = "\"";
 
     private final @NotNull String source;
     private final @NotNull List<Token> tokens = new ArrayList<>();
