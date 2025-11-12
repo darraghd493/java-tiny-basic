@@ -18,8 +18,6 @@ A Tiny BASIC parser, interpreter and transpiler (to Java bytecode) written in Ja
 
 ## Parser
 
-**Note:** The parser is not yet complete and does not support all Tiny BASIC syntax.  
-
 ```java
 import me.darragh.javatinybasic.ast.Token;
 import me.darragh.javatinybasic.parser.Parser;
@@ -93,6 +91,8 @@ public class InterpreterDemo {
 [View Example](Example/src/test/java/InterpreterDemo.java)
 
 ## Transpiler
+
+> ⚠️ Unstable.
 
 ```java
 import me.darragh.javatinybasic.ast.Token;
